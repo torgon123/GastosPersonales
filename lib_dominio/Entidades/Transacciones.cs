@@ -8,7 +8,5 @@
         public int Id_tipo { get; set; }
         public int Id_categoria { get; set; }
         public int Id_reporte { get; set; }
-        
-        
     }
 }
