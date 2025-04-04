@@ -1,4 +1,4 @@
-﻿using lib_dominio.Entidades;
+using lib_dominio.Entidades;
 using lib_repositorios.Implementaciones;
 using lib_repositorios.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -7,13 +7,13 @@ using ut_presentacion.Nucleo;
 namespace ut_presentacion.Repositorios
 {
     [TestClass]
-    public class TransaccionesPrueba
+    public class RecordatoriosPrueba
     {
         private readonly IConexion? iConexion;
-        private List<Transacciones>? lista;
-        private Transacciones? entidad;
+        private List<Recordatorios>? lista;
+        private Recordatorios? entidad;
 
-        public TransaccionesPrueba()
+        public RecordatoriosPrueba()
         {
             iConexion = new Conexion();
             iConexion.StringConexion = Configuracion.ObtenerValor("StringConexion");
@@ -30,14 +30,14 @@ namespace ut_presentacion.Repositorios
 
         public bool Listar()
         {
-            this.lista = this.iConexion!.Transacciones!.ToList();
+            this.lista = this.iConexion!.Recordatorios!.ToList();
             return lista.Count > 0;
         }
 
         public bool Guardar()
         {
-            this.entidad = EntidadesNucleo.Transacciones()!;
-            this.iConexion!.Transacciones!.Add(this.entidad);
+            this.entidad = EntidadesNucleo.Recordatorios()!;
+            this.iConexion!.Recordatorios!.Add(this.entidad);
             this.iConexion!.SaveChanges();
             return true;
         }
@@ -46,7 +46,7 @@ namespace ut_presentacion.Repositorios
         {
             //this.entidad!.Activo = true;
 
-            var entry = this.iConexion!.Entry<Transacciones>(this.entidad);
+            var entry = this.iConexion!.Entry<Recordatorios>(this.entidad);
             entry.State = EntityState.Modified;
             this.iConexion!.SaveChanges();
             return true;
@@ -54,7 +54,7 @@ namespace ut_presentacion.Repositorios
 
         public bool Borrar()
         {
-            this.iConexion!.Transacciones!.Remove(this.entidad!);
+            this.iConexion!.Recordatorios!.Remove(this.entidad!);
             this.iConexion!.SaveChanges();
             return true;
         }

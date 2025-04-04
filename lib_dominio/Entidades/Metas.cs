@@ -9,8 +9,6 @@ namespace lib_dominio.Entidades
         public decimal Monto { get; set; }
         public decimal Progreso { get; set; }
         public bool Finalizado { get; set; }
-        public Recordatorios? Recordatorio { get; set; }
-
-        [ForeignKey("Recordatorio")] public Recordatorios? _Recordatorio { get; set; }
+        public int Id_recordatorio { get; set; }
     }
 }

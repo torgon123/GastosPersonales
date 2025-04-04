@@ -15,5 +15,12 @@ namespace lib_repositorios.Implementaciones
         }
 
         public DbSet<Transacciones>? Transacciones { get; set; }
+        public DbSet<Tipos_transacciones>? Tipos_transacciones { get; set; }
+        public DbSet<Categorias>? Categorias { get; set; }
+        public DbSet<Conversiones>? Conversiones { get; set; }
+        public DbSet<Metas>? Metas { get; set; }
+        public DbSet<Monedas>? Monedas { get; set; }
+        public DbSet<Recordatorios>? Recordatorios { get; set; }
+        public DbSet<Reportes>? Reportes { get; set; }
     }
 }
